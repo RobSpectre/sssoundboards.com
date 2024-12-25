@@ -1,0 +1,16 @@
+[
+  { 
+    "name": "Cora",
+    "heroImage": "/images/cora.png",
+    "sounds": [
+      { "icon": "SpeakerWaveIcon", "path": "/sounds/les_toreadors.mp3"}
+    ]
+  },
+  { 
+    "name": "",
+    "heroImage": "/images/.png",
+    "sounds": [
+      { "icon": "", "path": "/sounds/.mp3"}
+    ]
+  }
+]
