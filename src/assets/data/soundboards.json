@@ -3,14 +3,36 @@
     "name": "Cora",
     "heroImage": "/images/cora.png",
     "sounds": [
-      { "icon": "SpeakerWaveIcon", "path": "/sounds/les_toreadors.mp3"}
+      { "icon": "mdi:music", "path": "/sounds/cora/intro.mp3", "music": true },
+      { "icon": "ph:sparkle-light", "path": "/sounds/cora/sparkle.mp3", "music": false },
+      { "icon": "noto:clown-face", "path": "/sounds/cora/clown_horn.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Weston",
+    "heroImage": "/images/weston.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/weston/intro.mp3", "music": true },
+      { "icon": "line-md:question", "path": "/sounds/weston/derp.mp3", "music": false },
+      { "icon": "game-icons:bouncing-spring", "path": "/sounds/weston/boing.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Halle",
+    "heroImage": "/images/halle.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/halle/intro.mp3", "music": true },
+      { "icon": "carbon:spray-paint", "path": "/sounds/halle/graffiti.mp3", "music": false },
+      { "icon": "noto:fairy", "path": "/sounds/halle/fairy.mp3", "music": false }
     ]
   },
   { 
     "name": "",
     "heroImage": "/images/.png",
     "sounds": [
-      { "icon": "", "path": "/sounds/.mp3"}
+      { "icon": "mdi:music", "path": "/sounds//intro.mp3", "music": true },
+      { "icon": "", "path": "/sounds//.mp3", "music": false },
+      { "icon": "", "path": "/sounds//.mp3", "music": false }
     ]
   }
 ]
