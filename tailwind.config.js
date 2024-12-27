@@ -21,8 +21,5 @@ export default {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       }
     },
-  },
-  plugins: [
-    require('flowbite/plugin')
-  ]
+  }
 }
