@@ -81,12 +81,39 @@
     ]
   },
   { 
-    "name": "",
-    "heroImage": "/images/.png",
+    "name": "Brian",
+    "heroImage": "/images/brian.png",
     "sounds": [
-      { "icon": "mdi:music", "path": "/sounds//intro.mp3", "music": true },
-      { "icon": "", "path": "/sounds//.mp3", "music": false },
-      { "icon": "", "path": "/sounds//.mp3", "music": false }
+      { "icon": "mdi:music", "path": "/sounds/brian/intro.mp3", "music": true },
+      { "icon": "gridicons:phone", "path": "/sounds/brian/ring_a_ding_full.mp3", "music": true },
+      { "icon": "noto:lion", "path": "/sounds/brian/lion_roar.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Gavin",
+    "heroImage": "/images/gavin.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/gavin/intro.mp3", "music": true },
+      { "icon": "noto:fork-and-knife-with-plate", "path": "/sounds/gavin/eating.mp3", "music": false },
+      { "icon": "game-icons:cave-entrance", "path": "/sounds/gavin/cave.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Callan",
+    "heroImage": "/images/callan.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/callan/intro.mp3", "music": true },
+      { "icon": "arcticons:just-dance-now", "path": "/sounds/callan/dance.mp3", "music": true },
+      { "icon": "fluent:walkie-talkie-24-filled", "path": "/sounds/callan/radio.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Nolan",
+    "heroImage": "/images/nolan.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/nolan/intro.mp3", "music": true },
+      { "icon": "game-icons:flash-grenade", "path": "/sounds/nolan/fire_in_the_hole.mp3", "music": false },
+      { "icon": "mdi:run-fast", "path": "/sounds/nolan/go_go_go.mp3", "music": false }
     ]
   }
 ]

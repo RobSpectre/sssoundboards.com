@@ -1,5 +1,5 @@
 <template lang="pug">
-div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4.min-w-sm
+div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4
   div.w-full.max-w-screen-md.flex.flex-col.items-center.mt-4
     Menu.relative.inline-block.text-left(as="div")
       div
@@ -7,8 +7,7 @@ div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4.min
           class="inline-flex items-center justify-center rounded-full px-4 py-2 bg-white text-sky-800 font-semibold text-lg shadow-md hover:bg-sky-50 ring-1 ring-inset ring-sky-200 focus:outline-none transition"
         )
           | Choose a Soundboard
-          ChevronDownIcon(aria-hidden='true' class="w-5 h-5 ml-2 text-sky-400")
-
+          Icon(icon="mdi:chevron-down" width="24" height="24")
       transition(
         enter-active-class="transition ease-out duration-100"
         enter-from-class="transform opacity-0 scale-95"
@@ -24,7 +23,7 @@ div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4.min
             MenuItem(v-for="soundboard in soundboards" :key="soundboard.name" v-slot="{ active }")
               a(
                 href="#"
-                @click.prevent="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+                @click="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
                 :class="['block px-4 py-2 text-base', active ? 'bg-sky-50 text-sky-900 outline-none' : 'text-gray-700']"
               ) {{ soundboard.name }}
     div.mt-6.w-full.max-w-md.rounded-xl.bg-white.shadow-md.overflow-hidden
