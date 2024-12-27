@@ -9,5 +9,6 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     }
   },
+  base: '/sssoundboard.com/'
   plugins: [vue()],
 })
