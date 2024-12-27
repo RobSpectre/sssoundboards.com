@@ -41,6 +41,7 @@ div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4
         :path="sound.path"
         :icon="sound.icon"
         :music="sound.music"
+        :name="state.name"
       )
     div.mt-8(v-else)
       p.text-lg.mb-2.text-sky-800.font-semibold Select a Soundboard:
@@ -48,7 +49,7 @@ div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4
         button(
           v-for="soundboard in soundboards"
           :key="soundboard.name"
-          @click.prevent="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+          @click.prevent="selectSoundboard(soundboard)"
           class="relative w-32 h-32 rounded-lg overflow-hidden shadow-md bg-white hover:bg-sky-50 focus:outline-none transition"
         )
           img.absolute.inset-0.w-full.h-full.object-cover(
@@ -92,6 +93,13 @@ export default {
   },
   methods: {
     ...mapActions(useStore, ['setState']),
+    selectSoundboard (soundboard) {
+      this.setState(soundboard.name, soundboard.heroImage, soundboard.sounds)
+
+      this.$gtag.event('Select Soundboard', {
+        event_category: soundboard.name,
+      })
+    }
   }
 }
 </script>

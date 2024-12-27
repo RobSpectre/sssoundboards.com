@@ -24,6 +24,7 @@ export default {
   props: {
     path: String,
     icon: String,
+    name: String,
     music: {
       type: Boolean,
       default: false
@@ -38,13 +39,28 @@ export default {
     playSound () {
       this.audio = new Audio(this.path)
       this.audio.play()
+
+      this.$gtag.event('Sound', {
+        event_category: this.name,
+        event_label: this.path
+      })
     },
     playMusic () {
       if (this.audio && !this.audio.paused && !this.audio.ended) {
         this.audio.load()
+
+        this.$gtag.event('Music', {
+          event_category: this.name,
+          event_label: "Stop" 
+        })
       } else {
         this.audio = new Audio(this.path)
         this.audio.play()
+
+        this.$gtag.event('Music', {
+          event_category: this.name,
+          event_label: this.path
+        })
       }
     }
   }
