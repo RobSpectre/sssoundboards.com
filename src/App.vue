@@ -1,48 +1,62 @@
 <template lang="pug">
-div#app.min-h-screen.bg-gradient-to-b.from-blue-100.to-purple-100.p-6
-  div.container.mx-auto(v-if='state.name')
-    Menu.relative.inline-block.text-left(as='div')
+div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4.min-w-sm
+  div.w-full.max-w-screen-md.flex.flex-col.items-center.mt-4
+    Menu.relative.inline-block.text-left(as="div")
       div
-        MenuButton.relative.px-4.py-2.bg-white.rounded-full.shadow-lg.transition-shadow.duration-200.flex.items-center.gap-2.text-purple-700.font-semibold(class='howver:shadow-xl gap-x-1.5 hover:bg-gray-50')
-          | Options
-          Icon.-mr-1.size-5.text-gray-400(aria-hidden='true' icon='mdi:chevron-down')
+        MenuButton(
+          class="inline-flex items-center justify-center rounded-full px-4 py-2 bg-white text-sky-800 font-semibold text-lg shadow-md hover:bg-sky-50 ring-1 ring-inset ring-sky-200 focus:outline-none transition"
+        )
+          | Choose a Soundboard
+          ChevronDownIcon(aria-hidden='true' class="w-5 h-5 ml-2 text-sky-400")
+
       transition(
-        enter-active-class='transition ease-out duration-100'
-        enter-from-class='transform opacity-0 scale-95'
-        enter-to-class='transform opacity-100 scale-100'
-        leave-active-class='transition ease-in duration-75'
-        leave-from-class='transform opacity-100 scale-100'
-        leave-to-class='transform opacity-0 scale-95'
+        enter-active-class="transition ease-out duration-100"
+        enter-from-class="transform opacity-0 scale-95"
+        enter-to-class="transform opacity-100 scale-100"
+        leave-active-class="transition ease-in duration-75"
+        leave-from-class="transform opacity-100 scale-100"
+        leave-to-class="transform opacity-0 scale-95"
       )
-        MenuItems.absolute.right-0.z-50.mt-2.w-56.origin-top-right.rounded-md.bg-white.shadow-lg.ring-1.flex.flex-col.items-center.justify-center(
-          class='ring-black/5 focus:outline-none'
+        MenuItems(
+          class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
         )
           .py-1
-            MenuItem(v-for="soundboard in soundboards" v-slot='{ active }')
+            MenuItem(v-for="soundboard in soundboards" :key="soundboard.name" v-slot="{ active }")
               a(
-                href='#'
-                :class="active ? 'bg-gray-100 text-gray-900 outline-none' : 'text-gray-700', 'block px-4 py-2 text-sm'"
-                @click="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
-              ) {{ soundboard.name }} 
-    .max-w-sm.bg-white.border.border-gray-200.rounded-lg(class='dark:bg-gray-800 dark:border-gray-700')
-      img.m-0.p-0.w-full.rounded-t-lg.clear-reveal.object-cover(
-        v-if='state.heroImage'
-        :src='state.heroImage'
+                href="#"
+                @click.prevent="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+                :class="['block px-4 py-2 text-base', active ? 'bg-sky-50 text-sky-900 outline-none' : 'text-gray-700']"
+              ) {{ soundboard.name }}
+    div.mt-6.w-full.max-w-md.rounded-xl.bg-white.shadow-md.overflow-hidden
+      img(
+        v-if="state.heroImage"
+        :src="state.heroImage"
+        class="w-full h-48 object-cover"
       )
-    .flex.flex-col.items-center.justify-center
-      SoundboardButton(
-        v-if='state.sounds'
-        v-for='sound in state.sounds'
-        :path='sound.path'
-        :icon='sound.icon'
-        :music='sound.music'
-      )
-  div.container.mx-auto(v-else)
-    button(
-      v-for="soundboard in soundboards"
-      @click.prevent="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+    div.flex.flex-col.items-center.justify-center.gap-4.mt-4(
+      v-if="state.sounds"
     )
-      img.max-w-lg(:src='soundboard.heroImage')
+      SoundboardButton(
+        v-for="sound in state.sounds"
+        :key="sound.path"
+        :path="sound.path"
+        :icon="sound.icon"
+        :music="sound.music"
+      )
+    div.mt-8(v-else)
+      p.text-lg.mb-2.text-sky-800.font-semibold Select a Soundboard:
+      div.flex.flex-wrap.items-center.justify-center.gap-4
+        button(
+          v-for="soundboard in soundboards"
+          :key="soundboard.name"
+          @click.prevent="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+          class="relative w-32 h-32 rounded-lg overflow-hidden shadow-md bg-white hover:bg-sky-50 focus:outline-none transition"
+        )
+          img.absolute.inset-0.w-full.h-full.object-cover(
+            :src="soundboard.heroImage"
+          )
+          div.absolute.inset-0.bg-black/20.flex.items-center.justify-center.p-2
+            span.text-white.font-semibold.text-center {{ soundboard.name }}
 </template>
 
 <script>
@@ -86,5 +100,19 @@ export default {
 <style lang="scss">
 html, body {
   @apply bg-darkgray;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-sky-100 {
+  background-color: #e0f2fe; // Light pastel sky color
+}
+
+.rounded-full, .rounded-lg, .rounded-xl {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 </style>

@@ -27,6 +27,60 @@
     ]
   },
   { 
+    "name": "Bennett",
+    "heroImage": "/images/bennett.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/bennett/intro.mp3", "music": true },
+      { "icon": "fluent-emoji-flat:cow-face", "path": "/sounds/bennett/moo.mp3", "music": false },
+      { "icon": "noto:goat", "path": "/sounds/bennett/goat_scream.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Logan",
+    "heroImage": "/images/logan.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/logan/intro.mp3", "music": true },
+      { "icon": "ph:disco-ball", "path": "/sounds/logan/boogie.mp3", "music": false },
+      { "icon": "map:police", "path": "/sounds/logan/paw_patrol.mp3", "music": true }
+    ]
+  },
+  { 
+    "name": "Carter",
+    "heroImage": "/images/carter.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/carter/intro.mp3", "music": true },
+      { "icon": "fa-solid:surprise", "path": "/sounds/carter/sheesh.mp3", "music": false },
+      { "icon": "arcticons:wow", "path": "/sounds/carter/legitness.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Addie",
+    "heroImage": "/images/addie.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/addie/intro.mp3", "music": true },
+      { "icon": "ix:namur-failure-filled", "path": "/sounds/addie/fail.mp3", "music": false },
+      { "icon": "mdi:court-hammer", "path": "/sounds/addie/duh_duh_duh.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "McKenna",
+    "heroImage": "/images/mckenna.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/mckenna/intro.mp3", "music": true },
+      { "icon": "arcticons:freenet-funk", "path": "/sounds/mckenna/uptown_funk.mp3", "music": false },
+      { "icon": "mingcute:snow-line", "path": "/sounds/mckenna/aurora.mp3", "music": false }
+    ]
+  },
+  { 
+    "name": "Kylee",
+    "heroImage": "/images/kylee.png",
+    "sounds": [
+      { "icon": "mdi:music", "path": "/sounds/kylee/intro.mp3", "music": true },
+      { "icon": "mingcute:cat-fill", "path": "/sounds/kylee/nyan_cat.mp3", "music": false },
+      { "icon": "mdi:camera-outline", "path": "/sounds/kylee/shutter.mp3", "music": false }
+    ]
+  },
+  { 
     "name": "",
     "heroImage": "/images/.png",
     "sounds": [
