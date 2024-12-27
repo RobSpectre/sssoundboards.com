@@ -1,10 +1,10 @@
 <template lang="pug">
-div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4
-  div.w-full.max-w-screen-md.flex.flex-col.items-center.mt-4
+div#app.flex.flex-col.min-h-screen.min-w-7.max-w-lg.items-center.justify-start.bg-slate-600.p-6
+  div.w-full.max-w-screen-md.flex.flex-col.items-center.mt-6
     Menu.relative.inline-block.text-left(as="div")
       div
         MenuButton(
-          class="inline-flex items-center justify-center rounded-full px-4 py-2 bg-white text-sky-800 font-semibold text-lg shadow-md hover:bg-sky-50 ring-1 ring-inset ring-sky-200 focus:outline-none transition"
+          class="inline-flex items-center justify-center rounded-full px-5 py-3 bg-white bg-opacity-90 text-neutral-800 font-semibold text-lg shadow-md hover:bg-neutral-100 ring-1 ring-inset ring-neutral-200 focus:outline-none transition duration-200"
         )
           | Choose a Soundboard
           Icon(icon="mdi:chevron-down" width="24" height="24")
@@ -17,24 +17,24 @@ div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4
         leave-to-class="transform opacity-0 scale-95"
       )
         MenuItems(
-          class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+          class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-md bg-white bg-opacity-95 shadow-lg ring-1 ring-black/5 focus:outline-none"
         )
           .py-1
             MenuItem(v-for="soundboard in soundboards" :key="soundboard.name" v-slot="{ active }")
               a(
                 href="#"
                 @click="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
-                :class="['block px-4 py-2 text-base', active ? 'bg-sky-50 text-sky-900 outline-none' : 'text-gray-700']"
-              ) {{ soundboard.name }}
-    div.mt-6.w-full.max-w-md.rounded-xl.bg-white.shadow-md.overflow-hidden
+                :class="'block px-4 py-2 text-base text-neutral-500 rounded hover:bg-neutral-500 transition', active ? 'bg-neutral-50 text-neutral-900' : 'text-white-700'"
+) {{ soundboard.name }}
+    div.mt-8.w-full.max-w-md.rounded-full.bg-white.bg-opacity-90.shadow-md.overflow-hidden
       img(
         v-if="state.heroImage"
         :src="state.heroImage"
-        class="w-full h-48 object-cover"
+        class="w-full h-full object-cover opacity-80"
+        alt="Soundboard Hero Image"
       )
-    div.flex.flex-col.items-center.justify-center.gap-4.mt-4(
-      v-if="state.sounds"
-    )
+
+    div.flex.flex-col.items-center.justify-center.gap-4.mt-6(v-if="state.sounds")
       SoundboardButton(
         v-for="sound in state.sounds"
         :key="sound.path"
@@ -43,19 +43,21 @@ div#app.flex.flex-col.min-h-screen.items-center.justify-start.bg-sky-100.p-4
         :music="sound.music"
         :name="state.name"
       )
-    div.mt-8(v-else)
-      p.text-lg.mb-2.text-sky-800.font-semibold Select a Soundboard:
-      div.flex.flex-wrap.items-center.justify-center.gap-4
+
+    div.mt-10(v-else)
+      p.text-2xl.mb-3.text-neutral-800.font-semibold Select a Soundboard:
+      div.flex.flex-wrap.items-center.justify-center.gap-6
         button(
           v-for="soundboard in soundboards"
           :key="soundboard.name"
           @click.prevent="selectSoundboard(soundboard)"
-          class="relative w-32 h-32 rounded-lg overflow-hidden shadow-md bg-white hover:bg-sky-50 focus:outline-none transition"
+          class="relative w-32 h-32 rounded-lg overflow-hidden shadow-md bg-white hover:bg-neutral-50 focus:outline-none transition transform hover:scale-105"
         )
           img.absolute.inset-0.w-full.h-full.object-cover(
             :src="soundboard.heroImage"
+            alt="{{ soundboard.name }} Image"
           )
-          div.absolute.inset-0.bg-black/20.flex.items-center.justify-center.p-2
+          div.absolute.inset-0.bg-black/30.flex.items-center.justify-center.p-2
             span.text-white.font-semibold.text-center {{ soundboard.name }}
 </template>
 
@@ -106,13 +108,9 @@ export default {
 
 <style lang="scss">
 html, body {
-  @apply bg-darkgray;
+  @apply bg-slate-400;
   margin: 0;
   padding: 0;
-}
-
-.bg-sky-100 {
-  background-color: #e0f2fe; // Light pastel sky color
 }
 
 .rounded-full, .rounded-lg, .rounded-xl {
