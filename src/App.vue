@@ -1,5 +1,5 @@
 <template lang="pug">
-Drawer
+Drawer(v-if="state.name")
   Container
     Card(
       class="flex flex-col min-h-screen min-w-7 max-w-lg items-center py-6"
@@ -48,6 +48,19 @@ Drawer
                     h2.text-3xl.text-bold.uppercase {{ soundboard.name }}
         CarouselPrevious
         CarouselNext
+Container(v-else)
+  .max-w-sm
+    .flex-flex-col.items-center.justify-center
+      Card(class='max-w-sm p-6' v-for="soundboard in soundboards")
+        CardContent(class='flex flex-col aspect-square items-center justify-center p-3')
+          a(
+            href="#"
+            @click.prevent="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+            class='flex flex-col items-center justify-center'
+          )
+            Avatar(class='w-64 h-64')
+              AvatarImage(:src='soundboard.heroImage')
+            h2.text-3xl.text-bold.uppercase {{ soundboard.name }}
 </template>
 
 <script>
