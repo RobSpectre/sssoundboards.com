@@ -1,7 +1,7 @@
 [
   { 
     "name": "Cora",
-    "heroImage": "/images/cora.png",
+    "heroImage": "/images/optimized/cora.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/cora/intro.mp3", "music": true },
       { "icon": "ph:sparkle-light", "path": "/sounds/cora/sparkle.mp3", "music": false },
@@ -20,7 +20,7 @@
   },
   { 
     "name": "Weston",
-    "heroImage": "/images/weston.png",
+    "heroImage": "/images/optimized/weston.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/weston/intro.mp3", "music": true },
       { "icon": "line-md:question", "path": "/sounds/weston/derp.mp3", "music": false },
@@ -39,7 +39,7 @@
   },
   { 
     "name": "Halle",
-    "heroImage": "/images/halle.png",
+    "heroImage": "/images/optimized/halle.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/halle/intro.mp3", "music": true },
       { "icon": "carbon:spray-paint", "path": "/sounds/halle/graffiti.mp3", "music": false },
@@ -58,7 +58,7 @@
   },
   { 
     "name": "Bennett",
-    "heroImage": "/images/bennett.png",
+    "heroImage": "/images/optimized/bennett.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/bennett/intro.mp3", "music": true },
       { "icon": "fluent-emoji-flat:cow-face", "path": "/sounds/bennett/moo.mp3", "music": false },
@@ -77,7 +77,7 @@
   },
   { 
     "name": "Logan",
-    "heroImage": "/images/logan.png",
+    "heroImage": "/images/optimized/logan.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/logan/intro.mp3", "music": true },
       { "icon": "ph:disco-ball", "path": "/sounds/logan/boogie.mp3", "music": false },
@@ -96,7 +96,7 @@
   },
   { 
     "name": "Carter",
-    "heroImage": "/images/carter.png",
+    "heroImage": "/images/optimized/carter.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/carter/intro.mp3", "music": true },
       { "icon": "fa-solid:surprise", "path": "/sounds/carter/sheesh.mp3", "music": false },
@@ -115,7 +115,7 @@
   },
   { 
     "name": "Addie",
-    "heroImage": "/images/addie.png",
+    "heroImage": "/images/optimized/addie.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/addie/intro.mp3", "music": true },
       { "icon": "ix:namur-failure-filled", "path": "/sounds/addie/fail.mp3", "music": false },
@@ -134,7 +134,7 @@
   },
   { 
     "name": "McKenna",
-    "heroImage": "/images/mckenna.png",
+    "heroImage": "/images/optimized/mckenna.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/mckenna/intro.mp3", "music": true },
       { "icon": "arcticons:freenet-funk", "path": "/sounds/mckenna/uptown_funk.mp3", "music": false },
@@ -153,7 +153,7 @@
   },
   { 
     "name": "Kylee",
-    "heroImage": "/images/kylee.png",
+    "heroImage": "/images/optimized/kylee.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/kylee/intro.mp3", "music": true },
       { "icon": "mingcute:cat-fill", "path": "/sounds/kylee/nyan_cat.mp3", "music": false },
@@ -172,7 +172,7 @@
   },
   { 
     "name": "Brian",
-    "heroImage": "/images/brian.png",
+    "heroImage": "/images/optimized/brian.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/brian/intro.mp3", "music": true },
       { "icon": "gridicons:phone", "path": "/sounds/brian/ring_a_ding_full.mp3", "music": true },
@@ -191,7 +191,7 @@
   },
   { 
     "name": "Gavin",
-    "heroImage": "/images/gavin.png",
+    "heroImage": "/images/optimized/gavin.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/gavin/intro.mp3", "music": true },
       { "icon": "noto:fork-and-knife-with-plate", "path": "/sounds/gavin/eating.mp3", "music": false },
@@ -210,7 +210,7 @@
   },
   { 
     "name": "Callan",
-    "heroImage": "/images/callan.png",
+    "heroImage": "/images/optimized/callan.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/callan/intro.mp3", "music": true },
       { "icon": "arcticons:just-dance-now", "path": "/sounds/callan/dance.mp3", "music": true },
@@ -229,7 +229,7 @@
   },
   { 
     "name": "Nolan",
-    "heroImage": "/images/nolan.png",
+    "heroImage": "/images/optimized/nolan.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/nolan/intro.mp3", "music": true },
       { "icon": "game-icons:flash-grenade", "path": "/sounds/nolan/fire_in_the_hole.mp3", "music": false },
