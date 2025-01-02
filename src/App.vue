@@ -37,7 +37,7 @@ Drawer(v-if="state.name")
             v-for="soundboard in soundboards"
             :key='soundboard.name'
             class="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-            @click="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+            @click="selectSoundboard(soundboard)"
           )
             .p-1.flex.items-center.justify-center
               DrawerClose
@@ -55,12 +55,18 @@ Container(v-else)
         CardContent(class='flex flex-col aspect-square items-center justify-center p-3')
           a(
             href="#"
-            @click.prevent="setState(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+            @click.prevent="selectSoundboard(soundboard.name, soundboard.heroImage, soundboard.sounds)"
             class='flex flex-col items-center justify-center'
           )
             Avatar(class='w-64 h-64')
               AvatarImage(:src='soundboard.heroImage')
             h2.text-3xl.text-bold.uppercase {{ soundboard.name }}
+.fixed.inset-0.flex.items-center.justify-center.bg-black.bg-opacity-80.z-50(v-if="progress !== 100")
+  Card(class='max-w-lg')
+    CardTitle
+      span.text-lg.font-semibold.m-6.uppercase Loading...
+    CardContent
+      Progress(v-model="progress")
 </template>
 
 <script>
@@ -87,6 +93,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import { Progress } from '@/components/ui/progress'
 import { cn } from '@/lib/utils'
 
 import { Icon } from '@iconify/vue'
@@ -127,7 +134,8 @@ export default {
     CarouselContent,
     CarouselItem,
     CarouselNext,
-    CarouselPrevious
+    CarouselPrevious,
+    Progress
   },
   setup () {
     return {
@@ -136,19 +144,36 @@ export default {
   },
   data () {
     return {
-      soundboards: soundboards
+      soundboards: soundboards,
+      loaded: 0,
+      total: 0,
+      sounds: {}
     }
   },
   computed: {
     ...mapGetters(useStore, ['getState']),
     state () {
       return this.getState
+    },
+    progress () {
+      if (this.total === 0) {
+        return 100
+      } else {
+        return (this.loaded / this.total) * 100
+      }
     }
   },
   methods: {
     ...mapActions(useStore, ['setState']),
     selectSoundboard (soundboard) {
       this.setState(soundboard.name, soundboard.heroImage, soundboard.sounds)
+
+      this.total = this.total + soundboard.sounds.length
+
+      soundboard.sounds.forEach((sound) => {
+        this.sounds[sound.path] = new Audio(sound.path)
+        this.loaded += 1
+      })
 
       this.$gtag.event('Select Soundboard', {
         event_category: soundboard.name,
