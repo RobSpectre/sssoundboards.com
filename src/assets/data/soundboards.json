@@ -115,7 +115,7 @@
   },
   { 
     "name": "Addie",
-    "heroImage": "/images/optimized/addie.webp",
+    "heroImage": "/images/optimized/mckenna.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/addie/intro.mp3", "music": true },
       { "icon": "ix:namur-failure-filled", "path": "/sounds/addie/fail.mp3", "music": false },
@@ -134,7 +134,7 @@
   },
   { 
     "name": "McKenna",
-    "heroImage": "/images/optimized/mckenna.webp",
+    "heroImage": "/images/optimized/addie.webp",
     "sounds": [
       { "icon": "mdi:music", "path": "/sounds/mckenna/intro.mp3", "music": true },
       { "icon": "arcticons:freenet-funk", "path": "/sounds/mckenna/uptown_funk.mp3", "music": false },

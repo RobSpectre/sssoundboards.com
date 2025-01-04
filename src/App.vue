@@ -55,7 +55,7 @@ Container(v-else)
         CardContent(class='flex flex-col aspect-square items-center justify-center p-3')
           a(
             href="#"
-            @click.prevent="selectSoundboard(soundboard.name, soundboard.heroImage, soundboard.sounds)"
+            @click.prevent="selectSoundboard(soundboard)"
             class='flex flex-col items-center justify-center'
           )
             Avatar(class='w-64 h-64')
@@ -73,7 +73,6 @@ Container(v-else)
 import { mapGetters, mapActions } from 'pinia'
 import { useStore } from '@/store/index.js'
 
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
@@ -107,10 +106,6 @@ import Container from '@/components/Container.vue'
 export default {
   name: 'App',
   components: {
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
     SoundboardButton,
     Icon,
     Card,
@@ -191,9 +186,5 @@ html, body {
 
 .rounded-full, .rounded-lg, .rounded-xl {
   transition: all 0.2s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
 }
 </style>
